@@ -1,0 +1,168 @@
+
+* {
+  font-family: 'Finlandica', sans-serif;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+}
+
+header {
+  background-color: #19645f;
+  width: 100%;
+  height: 120px;
+  display: block;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  border: 1px solid #e7e7e7;
+  background-color: #f0e9e9;
+}
+
+li {
+  
+  float: left;
+  border-right: 1px solid #101687;
+  width: 20% ;
+  
+}
+
+li a {
+  display: block;
+  color: 666;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #2d8888;
+}
+
+
+body {
+  min-height: 100vh;
+  text-align: center;
+  background-color: #F0EBE3; 
+
+}
+
+
+
+
+.nav-list {
+  float: right;
+  height: 100%;
+  vertical-align: middle;
+}
+
+.nav-list li {
+  height: 100%;
+  display: table;
+  float: left;
+  padding: 0px 20px;
+}
+
+.nav-list li a{
+  display: table-cell;
+  vertical-align: middle;
+  height: 100%;
+  color: white;
+  font-size: 20px;
+  
+}
+
+button {
+  font-size: 20px;
+  padding: 5px 10px;
+  color: white;
+  background-color: #363636;
+  border-radius: 20px;
+  border-style: none;
+}
+
+h1 {
+  font-size: 50px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  
+}
+
+
+.copyright {
+  font-size: 20px;
+  text-align: center;
+  padding-left: 0%;
+}
+
+.image {
+border-style: solid;
+width: 15%;
+margin: 50px;
+padding: 0px 30px 200px;
+background-color: #7D9D9C;
+border-radius: 5%;
+display: flex;
+align-items: center;
+align-self: center;
+align-content: center;
+text-align: center;
+
+
+}
+
+.info {
+width: 18%;
+text-align: center;
+font-size: 15px;
+color: #F0EBE3;
+/* border-style: dashed; */
+display: block;
+margin-top: -190px;
+margin-bottom: 100px;
+margin-left: 50px;
+
+}
+
+
+footer { 
+height: 100px;
+width: 100%;
+background-color: #19645f;
+position: sticky;
+top: 100%;
+text-align: center;
+margin-bottom: -100px;
+
+}
+
+footer p{
+padding-top: 15px
+}
+
+.social-media-icons {
+color: #F0EBE3;
+transition: color 0.2s;
+text-decoration: none;
+font-size: 40px;
+display: inline block;
+}
+
+.social-media-icons :hover {
+color: #222222;
+}
+
+.logo {
+height: 100px;
+float: left;
+vertical-align: middle;
+padding: 10px;
+}
