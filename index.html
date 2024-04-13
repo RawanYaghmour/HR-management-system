@@ -7,7 +7,7 @@
     <title>Home- HR Management</title>
     <meta name="description" content="HR Management Website">
     <meta name="keywords" content="HTML, CSS, JavaScript, HR, Management, Salary">
-    <meta name="author" content="Saeed Kokash">
+    <meta name="author" content="Rawan Yaghmour">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="./assets/icon32x32.ico">
 
@@ -46,7 +46,51 @@
     <main>
         
         <h1 id="title"> Welcome to Our HR-Management Website</h1>
+        <br/>
+        <form id="HR-Management">
 
+            <fieldset> 
+                <legend>Add new employee</legend>
+                <label for="Full name">Full name:</label>
+                <input type="text" id="fullName" name="fullName" placeholder="fullName">
+                
+                <br/>
+                <br/>
+
+                <label for="Department">Choose The Department :</label>
+
+                <select name="Department" id="Department">
+                    <option value="Administration">Administration</option>
+                    <option value="Marketing">Marketing</option>
+                    <option value="Development">Development</option>
+                    <option value="Finance">Finance</option>
+                </select>
+
+                <br/>
+                <br/>
+
+                <label for="cars">Choose The Level :</label>
+
+                <select name="Level" id="Level">
+                    <option value="Junior">Junior</option>
+                    <option value="Mid-Senior">Mid-Senior</option>
+                    <option value="Senior">Senior</option>
+                </select>
+
+                <br/>
+                <br/>
+
+                <label for="imgUrl">Image :</label>
+                <input type="text" name="imgUrl" id="imgUrl" placeholder="image path">
+
+                <br/>
+                <br/>
+
+                <input type="submit" value="Add">
+            </fieldset>
+        </form>
+
+        <section id="HR"></section>
 
 
     </main> 
@@ -55,8 +99,10 @@
     <br>
 
     <footer>
+        
 
         <section class="footer-content">
+            
 
             <a class="social-media-icons" href="facebookfakepagelink.com" target="_blank"> 
                 <i class="uil uil-facebook"></i>

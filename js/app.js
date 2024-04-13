@@ -9,7 +9,7 @@ console.log(allEmployees);
 
 //creating a constructor
 function Employeeinfo(employeeId, fullName, departement, level, imageUrl) {
-    this.employeeId = employeeId;
+    this.employeeId = getRndId(employeeId);
     this.fullName = fullName;
     this.departement = departement;
     this.level = level;
@@ -19,19 +19,29 @@ function Employeeinfo(employeeId, fullName, departement, level, imageUrl) {
      // console.log(this)
 }
 
-
 //using ternery if: 
 Employeeinfo.prototype.salary = function () {
-    (this.level.toLowerCase() === "senior") ? this.salary =  getRndIntegar(1500, 2000) :
-        (this.level.toLowerCase() === "mid-senior") ? this.salary =  getRndIntegar(1000, 1500) :
-            this.salary =  getRndIntegar(500, 1000)
+    var Salary;
+    (this.level.toLowerCase() === "senior") ? Salary =  Math.floor(Math.random() * (2000 - 1500 + 1)) + 1500 :
+        (this.level.toLowerCase() === "mid-senior") ? Salary =  Math.floor(Math.random() * (1500 - 1000 + 1)) + 1000 :
+           Salary =  Math.floor(Math.random() * (1000 - 500 + 1)) + 500 
+            return Salary ;
+
+}
+Employeeinfo.prototype.id = function () {
+    this.id =  getRndId(1000);
 
 }
 
 //calculating net salary
-Employeeinfo.prototype.netSalary = function () {
-    this.netSalary = Math.floor(this.salary - (this.salary * 0.075));
+Employeeinfo.prototype.netSalary = function (salary) {
+    salary= this.salary() ;
+   let netSalaryRawan = Math.floor(salary - (salary * 0.075));
+    return netSalaryRawan;
 }
+console.log( this.netSalary);
+console.log( this.salary);
+
 
 
 
@@ -59,7 +69,8 @@ const infoParent = document.createElement("div");
     cardInfo2.textContent = `Department: ${this.departement} - Level: ${this.level}`;
     
     const cardInfo3 = document.createElement("p");
-    cardInfo3.textContent = `Salary: ${this.netSalary}`;
+   
+    cardInfo3.textContent = `Salary: ${this.netSalary()}`;
     
 //appending childs to parents divs
     cardParent.appendChild(cardImg);
@@ -74,19 +85,40 @@ cardParent.appendChild(infoParent);
     document.body.appendChild(cardParent);    
 }
 
-//list of employees infos
-const ghaziSamer = new Employeeinfo (1000, "Ghazi Samer", "Administration", "Senior", "./imges/Ghazi.png");
-const lanaAli = new Employeeinfo (1001, "Lana Ali", "Finance", "Senior","./imges/Lana .png");
-const tamaraAyoub = new Employeeinfo (1002, "Tamara Ayoub", "Marketing", "Senior","./imges/Tamara .png");
-const safiWalid = new Employeeinfo (1003, "Safi Walid", "Administration", "Mid-Senior","./imges/Safi .png");
-const omarZaid = new Employeeinfo (1004, "Omar Zaid", "Development", "Senior","./imges/Omar .png");
-const ranaSaleh = new Employeeinfo (1005, "Rana Saleh", "Development", "Junior","./imges/Rana .png");
-const hadiAhmad = new Employeeinfo (1006, "Hadi Ahmad", "Finance", "Mid-Senior","./imges/Hadi .png");
+
+
+
+let drinkForm = document.getElementById("HR-Management");
+drinkForm.addEventListener('submit', addNewEmployee);
+
+
+function addNewEmployee(event) {
+    event.preventDefault();
+    let employeeName1 = event.target.fullName.value;
+    let department1 = event.target.Department.value;
+    let level1 = event.target.Level.value;
+    let imageUrl1 = event.target.imgUrl.value;
+
+    let newEmployee = new Employeeinfo(allEmployees, employeeName1, department1, level1, imageUrl1);
+    newEmployee.cardElements();
+}
 
 
 // random number function (between min and max included)
-function getRndIntegar(min, max) {
-    return Math.floor(Math.random() * (max - min + 1)) + min;
+//function getRndIntegar(min, max) {
+//    return Math.floor(Math.random() * (max - min + 1)) + min;
+//}
+
+function getRndId(existingIds) {
+    while (true) {
+        // Generate a random four-digit number
+        let employeeId = Math.floor(1000 + Math.random() * 9000);
+        
+        // Check if the generated ID is unique
+        if (!existingIds.includes(employeeId)) {
+            return employeeId;
+        }
+    }
 }
 
     // traverse function
@@ -94,5 +126,9 @@ for (let i = 0; i < allEmployees.length; i++) {
     // console.log (i, allEmployees[i]); // before so you can check the error
     allEmployees[i].salary();
     allEmployees[i].netSalary();
+    allEmployees[i].id();
     allEmployees[i].cardElements();
 }
+
+
+
