@@ -8,7 +8,7 @@
 }
 
 header {
-  background-color: #19645f;
+  background-color: #163c18;
   width: 100%;
   height: 120px;
   display: block;
@@ -50,7 +50,6 @@ li a:hover {
 
 body {
   min-height: 100vh;
-  text-align: center;
   background-color: #F0EBE3; 
 
 }
@@ -76,7 +75,7 @@ body {
   vertical-align: middle;
   height: 100%;
   color: white;
-  font-size: 20px;
+  font-size: 25px;
   
 }
 
@@ -98,7 +97,7 @@ h1 {
 
 
 .copyright {
-  font-size: 20px;
+  font-size: 21px;
   text-align: center;
   padding-left: 0%;
 }
@@ -106,23 +105,24 @@ h1 {
 .image {
 border-style: solid;
 width: 15%;
-margin: 50px;
-padding: 0px 30px 200px;
-background-color: #7D9D9C;
+margin: 55px;
+padding: 0px 30px 150px;
+background-color: #5b7157;
 border-radius: 5%;
 display: flex;
 align-items: center;
 align-self: center;
 align-content: center;
 text-align: center;
+justify-content: space-between;
 
 
 }
 
 .info {
-width: 18%;
+width: 19%;
 text-align: center;
-font-size: 15px;
+font-size: 16px;
 color: #F0EBE3;
 /* border-style: dashed; */
 display: block;
@@ -132,11 +132,31 @@ margin-left: 50px;
 
 }
 
+input {
+  width: 50%;
+  padding-left: 40px;
+  padding: 8px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+label {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+select {
+  width: 30%;
+  padding: 8px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+
 
 footer { 
-height: 100px;
+height: 50px;
 width: 100%;
-background-color: #19645f;
+background-color: #163c18;
 position: sticky;
 top: 100%;
 text-align: center;
@@ -160,9 +180,3 @@ display: inline block;
 color: #222222;
 }
 
-.logo {
-height: 100px;
-float: left;
-vertical-align: middle;
-padding: 10px;
-}
